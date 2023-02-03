@@ -30,10 +30,10 @@ CREATE TABLE `sub_task` (
 );
 
 CREATE TABLE `gen_master` (
-	gen_id VARCHAR(5),
-    gen_cd VARCHAR(5),
-    gen_name VARCHAR(50) NOT NULL,
-    gen_value VARCHAR(15) NOT NULL,
+	gen_id VARCHAR(10),
+    gen_cd VARCHAR(10),
+    gen_name VARCHAR(60) NOT NULL,
+    gen_value VARCHAR(20) NOT NULL,
     gen_note VARCHAR(256) NOT NULL,
     gen_created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     gen_updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
