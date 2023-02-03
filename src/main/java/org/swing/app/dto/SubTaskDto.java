@@ -1,6 +1,6 @@
 package org.swing.app.dto;
 
-public class SubTaskDto {
+public class SubTaskDto extends TaskBaseDto {
 
     private String taskId;
     private byte completePercent;
