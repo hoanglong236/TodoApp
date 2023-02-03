@@ -6,8 +6,8 @@ CREATE TABLE `task` (
 	task_id VARCHAR(10),
     task_name VARCHAR(256) NOT NULL,
     task_deadline TIMESTAMP,
-    task_submit_datetime TIMESTAMP,
-    task_complete_status BOOLEAN NOT NULL DEFAULT FALSE,
+    task_completed_datetime TIMESTAMP,
+    task_complete_flag BOOLEAN NOT NULL DEFAULT FALSE,
     task_created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     task_updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (task_id)
@@ -18,12 +18,15 @@ CREATE TABLE `sub_task` (
     task_id VARCHAR(10) NOT NULL,
     sub_task_name VARCHAR(256) NOT NULL,
     sub_task_deadline TIMESTAMP,
+    sub_task_completed_datetime TIMESTAMP,
     sub_task_complete_percent TINYINT NOT NULL DEFAULT 0 
 			CHECK (sub_task_complete_percent >= 0 AND sub_task_complete_percent <= 100),
-    sub_task_important BOOLEAN NOT NULL DEFAULT FALSE,
+    sub_task_important_flag BOOLEAN NOT NULL DEFAULT FALSE,
     sub_task_created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     sub_task_updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    PRIMARY KEY (sub_task_id)
+    PRIMARY KEY (sub_task_id),
+    CONSTRAINT fk_sub_task 
+		    FOREIGN KEY (task_id) REFERENCES task(task_id)
 );
 
 CREATE TABLE `gen_master` (
