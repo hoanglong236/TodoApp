@@ -13,10 +13,10 @@ public class MenuFrame extends CustomFrame {
     public MenuFrame(MenuController menuController) {
         super();
         this.menuController = menuController;
-        setMainContent(createMenuPanel());
+        setMainContent(generateMainContent());
     }
 
-    private CustomPanel createMenuPanel() {
+    private CustomPanel generateMainContent() {
         final SelectFeatureHandler selectFeatureHandler = new SelectFeatureHandler(this.menuController);
         final CustomPanel menuPanel = new MenuPanel(selectFeatureHandler);
         return menuPanel;
