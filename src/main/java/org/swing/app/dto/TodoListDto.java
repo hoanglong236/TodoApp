@@ -2,14 +2,15 @@ package org.swing.app.dto;
 
 import java.time.LocalDateTime;
 
-public abstract class TaskBaseDto {
+public class TodoListDto {
 
     private String id;
     private String name;
-    private LocalDateTime deadline;
+    private boolean completeFlag;
     private LocalDateTime completedDateTime;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private CompletionRate taskCompletionRate;
 
     public String getId() {
         return id;
@@ -27,12 +28,12 @@ public abstract class TaskBaseDto {
         this.name = name;
     }
 
-    public LocalDateTime getDeadline() {
-        return deadline;
+    public boolean getCompleteFlag() {
+        return completeFlag;
     }
 
-    public void setDeadline(LocalDateTime deadline) {
-        this.deadline = deadline;
+    public void setCompleteFlag(boolean completeFlag) {
+        this.completeFlag = completeFlag;
     }
 
     public LocalDateTime getCompletedDateTime() {
@@ -57,5 +58,13 @@ public abstract class TaskBaseDto {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public CompletionRate getTaskCompletionRate() {
+        return taskCompletionRate;
+    }
+
+    public void setTaskCompletionRate(CompletionRate taskCompletionRate) {
+        this.taskCompletionRate = taskCompletionRate;
     }
 }
