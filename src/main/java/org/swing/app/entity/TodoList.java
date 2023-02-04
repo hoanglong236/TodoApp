@@ -1,15 +1,14 @@
-package org.swing.app.dto;
+package org.swing.app.entity;
 
 import java.time.LocalDateTime;
 
-public class TodoListDto {
+public class TodoList {
 
     private String id;
     private String name;
     private LocalDateTime completedDateTime;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private CompletionRate taskCompletionRate;
 
     public String getId() {
         return id;
@@ -49,13 +48,5 @@ public class TodoListDto {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public CompletionRate getTaskCompletionRate() {
-        return taskCompletionRate;
-    }
-
-    public void setTaskCompletionRate(CompletionRate taskCompletionRate) {
-        this.taskCompletionRate = taskCompletionRate;
     }
 }

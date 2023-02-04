@@ -11,7 +11,7 @@ CREATE TABLE `todo_list` (
     PRIMARY KEY (list_id)
 );
 
-CREATE TABLE `task` (
+CREATE TABLE `todo_task` (
     task_id VARCHAR(20) NOT NULL,
     list_id VARCHAR(15) NOT NULL,
     task_name VARCHAR(192) NOT NULL,

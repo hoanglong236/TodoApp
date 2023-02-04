@@ -1,8 +1,8 @@
-package org.swing.app.dto;
+package org.swing.app.entity;
 
 import java.time.LocalDateTime;
 
-public class TaskDto {
+public class TodoTask {
 
     private String id;
     private String todoListId;

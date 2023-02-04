@@ -1,7 +1,7 @@
 package org.swing.app.view.todo.components.todolist;
 
 import org.swing.app.dto.CompletionRate;
-import org.swing.app.dto.TodoListDto;
+import org.swing.app.dto.todolist.TodoListDTO;
 import org.swing.app.view.common.*;
 import org.swing.app.view.components.CustomPanel;
 import org.swing.app.view.utils.ImageIconFactory;
@@ -24,11 +24,11 @@ public class TodoListPanel extends CustomPanel {
     private JLabel listNameLabel;
     private JLabel completionRateLabel;
 
-    private TodoListDto todoListDto;
+    private TodoListDTO todoListDTO;
 
-    public TodoListPanel(TodoListDto todoListDto) {
+    public TodoListPanel(TodoListDTO todoListDTO) {
         super();
-        this.todoListDto = todoListDto;
+        this.todoListDTO = todoListDTO;
 
         setLayout(this.springLayout);
         init();
@@ -40,13 +40,13 @@ public class TodoListPanel extends CustomPanel {
     }
 
     private void initListNameLabel() {
-        this.listNameLabel = new JLabel(this.todoListDto.getName());
+        this.listNameLabel = new JLabel(this.todoListDTO.getName());
     }
 
     private void initCompletionRateLabel() {
-        final CompletionRate completionRate = this.todoListDto.getTaskCompletionRate();
+        final CompletionRate taskCompletionRate = this.todoListDTO.getTaskCompletionRate();
 
-        this.completionRateLabel = new JLabel(completionRate.toString());
+        this.completionRateLabel = new JLabel(taskCompletionRate.toString());
         this.completionRateLabel.setIcon(ImageIconFactory.createImageIcon(IconLocationConstants.PLAN_ICON,
                 ComponentSizeConstants.SMALL_ICON_WIDTH, ComponentSizeConstants.SMALL_ICON_HEIGHT));
     }
@@ -107,14 +107,14 @@ public class TodoListPanel extends CustomPanel {
     }
 
     private void updateComponents() {
-        this.listNameLabel.setText(this.todoListDto.getName());
+        this.listNameLabel.setText(this.todoListDTO.getName());
 
-        final CompletionRate completionRate = this.todoListDto.getTaskCompletionRate();
-        this.completionRateLabel.setText(completionRate.toString());
+        final CompletionRate taskCompletionRate = this.todoListDTO.getTaskCompletionRate();
+        this.completionRateLabel.setText(taskCompletionRate.toString());
     }
 
-    public void update(TodoListDto todoListDto) {
-        this.todoListDto = todoListDto;
+    public void update(TodoListDTO todoListDTO) {
+        this.todoListDTO = todoListDTO;
         updateComponents();
     }
 }
