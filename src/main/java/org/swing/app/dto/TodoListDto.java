@@ -6,7 +6,6 @@ public class TodoListDto {
 
     private String id;
     private String name;
-    private boolean completeFlag;
     private LocalDateTime completedDateTime;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -26,14 +25,6 @@ public class TodoListDto {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public boolean getCompleteFlag() {
-        return completeFlag;
-    }
-
-    public void setCompleteFlag(boolean completeFlag) {
-        this.completeFlag = completeFlag;
     }
 
     public LocalDateTime getCompletedDateTime() {
