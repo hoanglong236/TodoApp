@@ -13,13 +13,13 @@ public class CustomFrame extends JFrame implements WrapperComponent {
 
     private static final byte HORIZONTAL_GAP = LayoutGapConstants.EXTRA_LARGE_H_GAP;
     private static final byte VERTICAL_GAP = LayoutGapConstants.EXTRA_LARGE_V_GAP;
-    private static final LayoutManager MAIN_LAYOUT = new FlowLayout(FlowLayout.CENTER, HORIZONTAL_GAP, VERTICAL_GAP);
+    private final LayoutManager flowLayout = new FlowLayout(FlowLayout.CENTER, HORIZONTAL_GAP, VERTICAL_GAP);
 
     private CustomPanel mainContentPanel;
 
     public CustomFrame() {
         super();
-        setLayout(MAIN_LAYOUT);
+        setLayout(this.flowLayout);
     }
 
     public void setMainContent(CustomPanel mainContentPanel) {

@@ -17,7 +17,7 @@ public class FeaturePanel extends CustomPanel {
 
     private static final byte HORIZONTAL_GAP = LayoutGapConstants.MEDIUM_H_GAP;
     private static final byte VERTICAL_GAP = LayoutGapConstants.MEDIUM_V_GAP;
-    private static final LayoutManager MAIN_LAYOUT = new FlowLayout(FlowLayout.CENTER, HORIZONTAL_GAP, VERTICAL_GAP);
+    private final LayoutManager flowLayout = new FlowLayout(FlowLayout.CENTER, HORIZONTAL_GAP, VERTICAL_GAP);
 
     private static final Font LABEL_NAME_FONT = new Font(ViewConstants.PRIMARY_FONT_NAME, Font.BOLD,
             ViewConstants.MEDIUM_FONT_SIZE);
@@ -27,7 +27,7 @@ public class FeaturePanel extends CustomPanel {
 
     public FeaturePanel(String featureName, String featureIconLocation) {
         super();
-        setLayout(MAIN_LAYOUT);
+        setLayout(this.flowLayout);
         init(featureName, featureIconLocation);
     }
 
