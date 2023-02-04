@@ -21,6 +21,7 @@ CREATE TABLE `task` (
     task_complete_percent TINYINT NOT NULL DEFAULT 0
             CHECK (task_complete_percent >= 0 AND task_complete_percent <= 100),
     task_completed_datetime TIMESTAMP DEFAULT NULL,
+    task_note VARCHAR(512) DEFAULT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (task_id),

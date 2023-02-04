@@ -11,6 +11,7 @@ public class TaskDto {
     private LocalDateTime deadline;
     private byte completePercent;
     private LocalDateTime completedDateTime;
+    private String note;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -68,6 +69,14 @@ public class TaskDto {
 
     public void setCompletedDateTime(LocalDateTime completedDateTime) {
         this.completedDateTime = completedDateTime;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public LocalDateTime getCreatedAt() {
