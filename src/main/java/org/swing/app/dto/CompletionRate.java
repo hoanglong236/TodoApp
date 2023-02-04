@@ -25,4 +25,15 @@ public class CompletionRate {
     public void setTotalCount(int totalCount) {
         this.totalCount = totalCount;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append(this.completedCount);
+        stringBuilder.append(" / ");
+        stringBuilder.append(this.totalCount);
+
+        return stringBuilder.toString();
+    }
 }
