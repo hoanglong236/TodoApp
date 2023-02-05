@@ -17,7 +17,7 @@ public abstract class CustomPanel extends JPanel implements WrapperComponent {
             final Dimension componentSize = componentSizeMap.get(component);
 
             if (component instanceof WrapperComponent) {
-                ((WrapperComponent) component).resizeWrapperAndItsComponents(componentSize);
+                ((WrapperComponent) component).resizeItselfAndItsComponents(componentSize);
             } else {
                 component.setPreferredSize(componentSizeMap.get(component));
             }
@@ -25,7 +25,7 @@ public abstract class CustomPanel extends JPanel implements WrapperComponent {
     }
 
     @Override
-    public void resizeWrapperAndItsComponents(Dimension wrapperSize) {
+    public void resizeItselfAndItsComponents(Dimension wrapperSize) {
         setPreferredSize(wrapperSize);
         resizingComponents();
     }

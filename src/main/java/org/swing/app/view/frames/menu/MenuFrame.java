@@ -20,7 +20,7 @@ public class MenuFrame extends CustomFrame {
         setMainContent(generateMainContent());
 
         setBackground(ViewConstants.PRIMARY_BACKGROUND_COLOR);
-        resizeWrapperAndItsComponents(ComponentSizeConstants.MENU_FRAME_SIZE);
+        resizeItselfAndItsComponents(ComponentSizeConstants.MENU_FRAME_SIZE);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
         setLocationRelativeTo(null);
