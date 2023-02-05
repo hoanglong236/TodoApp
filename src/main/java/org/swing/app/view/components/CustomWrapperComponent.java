@@ -2,7 +2,7 @@ package org.swing.app.view.components;
 
 import java.awt.Dimension;
 
-public interface WrapperComponent {
+public interface CustomWrapperComponent {
 
     void resizingComponents();
 

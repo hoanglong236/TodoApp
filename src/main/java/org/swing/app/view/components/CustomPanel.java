@@ -5,7 +5,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.util.Map;
 
-public abstract class CustomPanel extends JPanel implements WrapperComponent {
+public abstract class CustomPanel extends JPanel implements CustomWrapperComponent {
 
     protected abstract Map<Component, Dimension> generateComponentSizeMap();
 
@@ -16,8 +16,8 @@ public abstract class CustomPanel extends JPanel implements WrapperComponent {
         for (final Component component : getComponents()) {
             final Dimension componentSize = componentSizeMap.get(component);
 
-            if (component instanceof WrapperComponent) {
-                ((WrapperComponent) component).resizeItselfAndItsComponents(componentSize);
+            if (component instanceof CustomWrapperComponent) {
+                ((CustomWrapperComponent) component).resizeItselfAndItsComponents(componentSize);
             } else {
                 component.setPreferredSize(componentSizeMap.get(component));
             }

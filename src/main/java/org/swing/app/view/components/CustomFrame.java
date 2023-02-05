@@ -9,17 +9,17 @@ import java.awt.FlowLayout;
 import java.awt.LayoutManager;
 
 
-public class CustomFrame extends JFrame implements WrapperComponent {
+public class CustomFrame extends JFrame implements CustomWrapperComponent {
 
     private static final byte HORIZONTAL_GAP = LayoutGapConstants.EXTRA_LARGE_H_GAP;
     private static final byte VERTICAL_GAP = LayoutGapConstants.EXTRA_LARGE_V_GAP;
-    private final LayoutManager flowLayout = new FlowLayout(FlowLayout.CENTER, HORIZONTAL_GAP, VERTICAL_GAP);
+    private final LayoutManager layoutManager = new FlowLayout(FlowLayout.CENTER, HORIZONTAL_GAP, VERTICAL_GAP);
 
     private CustomPanel mainContentPanel;
 
     public CustomFrame() {
         super();
-        setLayout(this.flowLayout);
+        setLayout(this.layoutManager);
     }
 
     public void setMainContent(CustomPanel mainContentPanel) {

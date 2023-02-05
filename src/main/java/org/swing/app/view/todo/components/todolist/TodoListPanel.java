@@ -18,7 +18,7 @@ public class TodoListPanel extends CustomPanel {
 
     private static final byte HORIZONTAL_GAP = LayoutGapConstants.SMALL_H_GAP;
     private static final byte VERTICAL_GAP = LayoutGapConstants.SMALL_V_GAP;
-    private final LayoutManager springLayout = new SpringLayout();
+    private final LayoutManager layoutManager = new SpringLayout();
 
     private JLabel activeLabel;
     private JLabel listNameLabel;
@@ -30,7 +30,7 @@ public class TodoListPanel extends CustomPanel {
         super();
         this.todoListDTO = todoListDTO;
 
-        setLayout(this.springLayout);
+        setLayout(this.layoutManager);
         init();
     }
 
@@ -52,7 +52,7 @@ public class TodoListPanel extends CustomPanel {
     }
 
     private void initLayoutConstraint() {
-        final SpringLayout springLayoutInstance = (SpringLayout) this.springLayout;
+        final SpringLayout springLayoutInstance = (SpringLayout) this.layoutManager;
 
         springLayoutInstance.putConstraint(SpringLayout.WEST, this.activeLabel, HORIZONTAL_GAP,
                 SpringLayout.WEST, this);

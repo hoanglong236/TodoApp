@@ -3,7 +3,7 @@ CREATE DATABASE TodoApp DEFAULT CHARACTER SET UTF8MB4 COLLATE UTF8MB4_UNICODE_CI
 USE TodoApp;
 
 CREATE TABLE `todo_list` (
-	list_id VARCHAR(10) NOT NULL,
+    list_id VARCHAR(10) NOT NULL,
     list_name VARCHAR(128) NOT NULL,
     list_completed_datetime TIMESTAMP DEFAULT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -29,7 +29,7 @@ CREATE TABLE `todo_task` (
 );
 
 CREATE TABLE `gen_master` (
-	gen_id VARCHAR(8),
+    gen_id VARCHAR(8),
     gen_cd VARCHAR(8),
     gen_name VARCHAR(60) NOT NULL,
     gen_value VARCHAR(20) NOT NULL,

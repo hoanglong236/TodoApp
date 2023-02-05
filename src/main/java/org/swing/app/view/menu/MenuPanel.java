@@ -22,7 +22,7 @@ public class MenuPanel extends CustomPanel implements MouseListener {
 
     private static final byte HORIZONTAL_GAP = LayoutGapConstants.LARGE_H_GAP;
     private static final byte VERTICAL_GAP = LayoutGapConstants.LARGE_V_GAP;
-    private final LayoutManager flowLayout = new FlowLayout(FlowLayout.LEFT, HORIZONTAL_GAP, VERTICAL_GAP);
+    private final LayoutManager layoutManager = new FlowLayout(FlowLayout.LEFT, HORIZONTAL_GAP, VERTICAL_GAP);
 
     private CustomPanel todoFeaturePanel;
     private CustomPanel statisticsFeaturePanel;
@@ -33,7 +33,7 @@ public class MenuPanel extends CustomPanel implements MouseListener {
         super();
         this.selectFeatureHandler = selectFeatureHandler;
 
-        setLayout(this.flowLayout);
+        setLayout(this.layoutManager);
         init();
     }
 
@@ -73,8 +73,8 @@ public class MenuPanel extends CustomPanel implements MouseListener {
     protected Map<Component, Dimension> generateComponentSizeMap() {
         final Map<Component, Dimension> componentSizeMap = new HashMap<>();
 
-        final int featurePanelWidth = ComponentSizeConstants.DEFAULT_FEATURE_PANEL_WIDTH;
-        final int featurePanelHeight = ComponentSizeConstants.DEFAULT_FEATURE_PANEL_HEIGHT;
+        final int featurePanelWidth = ComponentSizeConstants.FEATURE_PANEL_WIDTH;
+        final int featurePanelHeight = ComponentSizeConstants.FEATURE_PANEL_HEIGHT;
 
         componentSizeMap.put(this.todoFeaturePanel, new Dimension(featurePanelWidth, featurePanelHeight));
         componentSizeMap.put(this.statisticsFeaturePanel,

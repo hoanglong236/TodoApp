@@ -22,8 +22,10 @@ public class ComponentSizeConstants {
     public static final byte DOUBLE_EXTRA_LARGE_ICON_WIDTH = 80;
     public static final byte DOUBLE_EXTRA_LARGE_ICON_HEIGHT = 80;
 
-    public static final int DEFAULT_FEATURE_PANEL_WIDTH = 116;
-    public static final int DEFAULT_FEATURE_PANEL_HEIGHT = 150;
+    public static final int FEATURE_PANEL_WIDTH = 114;
+    public static final int FEATURE_PANEL_HEIGHT = 146;
+
+    public static final byte VERTICAL_SCROLL_BAR_WIDTH = 12;
 
     public static final Dimension MENU_FRAME_SIZE = new Dimension(300, 250);
 
