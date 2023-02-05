@@ -39,12 +39,13 @@ public class CustomFrame extends JFrame implements WrapperComponent {
         final int mainContentPanelWidth = availableWidth - HORIZONTAL_GAP;
         final int mainContentPanelHeight = availableHeight - VERTICAL_GAP;
 
-        this.mainContentPanel.setPreferredSize(new Dimension(mainContentPanelWidth, mainContentPanelHeight));
+        this.mainContentPanel.resizeWrapperAndItsComponents(
+                new Dimension(mainContentPanelWidth, mainContentPanelHeight));
     }
 
     @Override
-    public void setPreferredSize(Dimension preferredSize) {
-        super.setPreferredSize(preferredSize);
+    public void resizeWrapperAndItsComponents(Dimension wrapperSize) {
+        setPreferredSize(wrapperSize);
         resizingComponents();
     }
 }

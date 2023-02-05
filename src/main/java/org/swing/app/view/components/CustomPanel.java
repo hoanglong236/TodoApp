@@ -14,13 +14,19 @@ public abstract class CustomPanel extends JPanel implements WrapperComponent {
         final Map<Component, Dimension> componentSizeMap = generateComponentSizeMap();
 
         for (final Component component : getComponents()) {
-            component.setPreferredSize(componentSizeMap.get(component));
+            final Dimension componentSize = componentSizeMap.get(component);
+
+            if (component instanceof WrapperComponent) {
+                ((WrapperComponent) component).resizeWrapperAndItsComponents(componentSize);
+            } else {
+                component.setPreferredSize(componentSizeMap.get(component));
+            }
         }
     }
 
     @Override
-    public void setPreferredSize(Dimension preferredSize) {
-        super.setPreferredSize(preferredSize);
+    public void resizeWrapperAndItsComponents(Dimension wrapperSize) {
+        setPreferredSize(wrapperSize);
         resizingComponents();
     }
 }
