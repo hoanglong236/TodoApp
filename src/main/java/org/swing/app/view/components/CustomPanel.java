@@ -25,8 +25,8 @@ public abstract class CustomPanel extends JPanel implements WrapperComponent {
     }
 
     @Override
-    public void resizeItselfAndItsComponents(Dimension wrapperSize) {
-        setPreferredSize(wrapperSize);
+    public void resizeItselfAndItsComponents(Dimension dimension) {
+        setPreferredSize(dimension);
         resizingComponents();
     }
 }

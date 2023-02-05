@@ -44,8 +44,8 @@ public class CustomFrame extends JFrame implements WrapperComponent {
     }
 
     @Override
-    public void resizeItselfAndItsComponents(Dimension wrapperSize) {
-        setPreferredSize(wrapperSize);
+    public void resizeItselfAndItsComponents(Dimension dimension) {
+        setPreferredSize(dimension);
         resizingComponents();
     }
 }

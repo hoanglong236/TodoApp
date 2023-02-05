@@ -6,5 +6,5 @@ public interface WrapperComponent {
 
     void resizingComponents();
 
-    void resizeItselfAndItsComponents(Dimension wrapperSize);
+    void resizeItselfAndItsComponents(Dimension dimension);
 }
